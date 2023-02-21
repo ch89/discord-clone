@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { initializeApp } from "firebase/app";
 import './assets/main.css'
+import store from "./store"
 
 initializeApp({
     apiKey: "AIzaSyDhy9Wq7T-Cxiz_2frS7By9piWVc_W2K0E",
@@ -13,4 +14,4 @@ initializeApp({
     appId: "1:736391802140:web:ae9ef38fdd717eb22a5ed9"
 })
 
-createApp(App).mount('#app')
+createApp(App).use(store).mount('#app')

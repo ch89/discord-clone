@@ -1,10 +1,16 @@
+<script setup>
+import { useStore } from "vuex";
+
+const store = useStore()
+</script>
+
 <template>
     <div class="bg-[#313338] col-span-2 p-4 flex gap-4 text-[#b8b9bf] border-b border-[#1e1f22]">
-        <div class="flex items-center gap-2 mr-auto">
+        <div class="flex items-center gap-2" v-if="store.state.channel">
             <i class="fa-solid fa-hashtag"></i>
-            <h3 class="font-semibold text-white">Channel</h3>
+            <h3 class="font-semibold text-white">{{ store.state.channel.name }}</h3>
         </div>
-        <button class="text-lg">
+        <button class="text-lg ml-auto">
             <i class="fa-solid fa-bell"></i>
         </button>
         <button class="text-lg">
